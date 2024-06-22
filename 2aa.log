@@ -1,0 +1,134 @@
+GO111MODULE=on go test -v --count=1 --parallel=1 -p=1 ./raft -run 2AA
+=== RUN   TestFollowerUpdateTermFromMessage2AA
+--- PASS: TestFollowerUpdateTermFromMessage2AA (0.00s)
+=== RUN   TestCandidateUpdateTermFromMessage2AA
+--- PASS: TestCandidateUpdateTermFromMessage2AA (0.00s)
+=== RUN   TestLeaderUpdateTermFromMessage2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+--- PASS: TestLeaderUpdateTermFromMessage2AA (0.00s)
+=== RUN   TestStartAsFollower2AA
+--- PASS: TestStartAsFollower2AA (0.00s)
+=== RUN   TestLeaderBcastBeat2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+--- PASS: TestLeaderBcastBeat2AA (0.00s)
+=== RUN   TestFollowerStartElection2AA
+--- PASS: TestFollowerStartElection2AA (0.00s)
+=== RUN   TestCandidateStartNewElection2AA
+--- PASS: TestCandidateStartNewElection2AA (0.00s)
+=== RUN   TestLeaderElectionInOneRoundRPC2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 4, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 5, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 2[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 4[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: true[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: true[0m
+--- PASS: TestLeaderElectionInOneRoundRPC2AA (0.00s)
+=== RUN   TestFollowerVote2AA
+--- PASS: TestFollowerVote2AA (0.00s)
+=== RUN   TestCandidateFallback2AA
+--- PASS: TestCandidateFallback2AA (0.00s)
+=== RUN   TestFollowerElectionTimeoutRandomized2AA
+--- PASS: TestFollowerElectionTimeoutRandomized2AA (0.00s)
+=== RUN   TestCandidateElectionTimeoutRandomized2AA
+--- PASS: TestCandidateElectionTimeoutRandomized2AA (0.00s)
+=== RUN   TestFollowersElectionTimeoutNonconflict2AA
+--- PASS: TestFollowersElectionTimeoutNonconflict2AA (0.00s)
+=== RUN   TestCandidatesElectionTimeoutNonconflict2AA
+--- PASS: TestCandidatesElectionTimeoutNonconflict2AA (0.00s)
+=== RUN   TestLeaderElection2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 4, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 5, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 4, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+--- PASS: TestLeaderElection2AA (0.00s)
+=== RUN   TestLeaderCycle2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] receive vote response from 1, reject: false[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] receive vote response from 1, reject: false[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] become leader, term 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 2[0m
+--- PASS: TestLeaderCycle2AA (0.00s)
+=== RUN   TestVoteFromAnyState2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+--- PASS: TestVoteFromAnyState2AA (0.00s)
+=== RUN   TestSingleNodeCandidate2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+--- PASS: TestSingleNodeCandidate2AA (0.00s)
+=== RUN   TestCandidateResetTermMessageType_MsgHeartbeat2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 2[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] receive vote response from 1, reject: false[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader reject vote request from 3, message term 2 is not higher than current term 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgRequestVoteResponse from 1[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgRequestVoteResponse from 2[0m
+--- PASS: TestCandidateResetTermMessageType_MsgHeartbeat2AA (0.00s)
+=== RUN   TestCandidateResetTermMessageType_MsgAppend2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] receive vote response from 1, reject: false[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader reject vote request from 3, message term 2 is not higher than current term 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgRequestVoteResponse from 1[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgRequestVoteResponse from 2[0m
+--- PASS: TestCandidateResetTermMessageType_MsgAppend2AA (0.00s)
+=== RUN   TestDisruptiveFollower2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgHeartbeatResponse from 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] receive vote response from 1, reject: false[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] become leader, term 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 2[0m
+--- PASS: TestDisruptiveFollower2AA (0.00s)
+=== RUN   TestRecvMessageType_MsgBeat2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateCandidate ignore message MsgBeat from 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateFollower ignore message MsgBeat from 1[0m
+--- PASS: TestRecvMessageType_MsgBeat2AA (0.00s)
+=== RUN   TestCampaignWhileLeader2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 1[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgHup from 1[0m
+--- PASS: TestCampaignWhileLeader2AA (0.00s)
+=== RUN   TestSplitVote2AA
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: false[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] become leader, term 2[0m
+[raftNode: 1]2024/06/23 01:24:51 [0;37m[info] StateLeader ignore message MsgRequestVoteResponse from 3[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] StateCandidate reject vote request from 2, message term 3 is not higher than current term 3[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] StateCandidate reject vote request from 3, message term 3 is not higher than current term 3[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: true[0m
+[raftNode: 3]2024/06/23 01:24:51 [0;37m[info] receive vote response from 2, reject: true[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] receive vote response from 3, reject: false[0m
+[raftNode: 2]2024/06/23 01:24:51 [0;37m[info] become leader, term 4[0m
+--- PASS: TestSplitVote2AA (0.00s)
+PASS
+ok  	github.com/pingcap-incubator/tinykv/raft	0.128s
